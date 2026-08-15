@@ -886,7 +886,7 @@
             <option>Interview Coaching</option>
             <option>Professional Résumé</option>
             <option>Interview Consulting</option>
-            <option>Simulator Interpretation</option>
+            <option>Simulator Interpreter</option>
             <option>The Book</option>
             <option>Something else</option>
           </select>
@@ -898,6 +898,12 @@
         <button type="submit" class="btn btn-primary modal-submit">Send Message</button>
         <div class="modal-note">Scheduling happens over WhatsApp once we're in touch — free to reschedule or cancel anytime.</div>
       </form>
+      <div class="modal-success" id="contactFormSuccess" style="display:none;text-align:center;padding:24px 0;">
+        <div style="font-size:34px;margin-bottom:12px;">✓</div>
+        <h3 style="margin-bottom:10px;">Message sent</h3>
+        <p>Thanks for reaching out — we've received your message and will reply by email shortly.</p>
+        <button type="button" class="btn btn-primary modal-submit" onclick="closeContactModal()" style="margin-top:18px;">Close</button>
+      </div>
     </div>
   </div>
 
@@ -915,6 +921,9 @@
       const sel = document.getElementById('cf-interest');
       if(sel) sel.value = preset;
     }
+    document.getElementById('contactForm').style.display = '';
+    document.getElementById('contactFormSuccess').style.display = 'none';
+    document.getElementById('contactForm').reset();
     document.getElementById('contactModal').classList.add('open');
     document.body.style.overflow='hidden';
   }
@@ -932,9 +941,38 @@
     const type = document.getElementById('cf-type').value;
     const interest = document.getElementById('cf-interest').value;
     const message = document.getElementById('cf-message').value;
-    const subject = encodeURIComponent(`Website inquiry — ${interest}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nType: ${type}\nInterested in: ${interest}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:contact@alcanceaviation.com?subject=${subject}&body=${body}`;
+    const form = document.getElementById('contactForm');
+    const btn = form.querySelector('.modal-submit');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch('https://formsubmit.co/ajax/contact@alcanceaviation.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        Name: name,
+        Email: email,
+        Type: type,
+        'Interested in': interest,
+        Message: message,
+        _subject: `Website inquiry — ${interest}`,
+        _template: 'table',
+        _autoresponse: "Thanks for reaching out to Alcance Aviation! We've received your message and will get back to you by email shortly. If it's urgent, feel free to reply directly to this email."
+      })
+    })
+    .then(res => res.json())
+    .then(() => {
+      form.style.display = 'none';
+      document.getElementById('contactFormSuccess').style.display = 'block';
+      btn.textContent = originalText;
+      btn.disabled = false;
+    })
+    .catch(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+      window.location.href = `mailto:contact@alcanceaviation.com?subject=${encodeURIComponent('Website inquiry — ' + interest)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nType: ' + type + '\nInterested in: ' + interest + '\n\nMessage:\n' + message)}`;
+    });
   }
 </script>
 
