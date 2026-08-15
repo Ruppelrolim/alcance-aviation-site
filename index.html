@@ -293,6 +293,42 @@
     .interpret-copy p{margin-left:auto;margin-right:auto;}
   }
 
+  /* ---------- SERVICE PROPOSAL (interpretation detail) ---------- */
+  .interpret-detail{margin-top:72px;padding-top:56px;border-top:1px solid rgba(255,255,255,0.14);}
+  .interpret-detail-head{max-width:720px;margin:0 auto 44px;text-align:center;}
+  .interpret-detail-head .sec-eyebrow{text-align:center;}
+  .interpret-detail-head p{color:var(--silver);font-size:15px;line-height:1.65;}
+  .interpret-detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  .interpret-detail-item{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:8px;
+    padding:28px 30px;
+  }
+  .interpret-detail-item h4{
+    font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:0.12em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:16px;
+  }
+  .interpret-detail-item p{color:var(--silver);font-size:14px;line-height:1.65;}
+  .interpret-detail-item ul{list-style:none;}
+  .interpret-detail-item ul li{
+    position:relative;padding-left:18px;color:var(--silver);
+    font-size:13.5px;line-height:1.6;margin-bottom:9px;
+  }
+  .interpret-detail-item ul li:last-child{margin-bottom:0;}
+  .interpret-detail-item ul li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .interpret-detail-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+  .interpret-detail-item .sub-label{
+    display:block;font-family:var(--body);font-weight:600;font-size:11.5px;
+    letter-spacing:0.04em;color:var(--silver);text-transform:none;margin-top:-10px;margin-bottom:14px;
+  }
+  @media (max-width:900px){
+    .interpret-detail-grid.cols-3{grid-template-columns:1fr;}
+  }
+  @media (max-width:700px){
+    .interpret-detail-grid{grid-template-columns:1fr;}
+  }
+
   /* ---------- FLIGHT PLAN PROCESS ---------- */
   .flightplan{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .fp-track{
@@ -603,9 +639,9 @@
           <p>Company-specific prep — fleet knowledge, domiciles, culture, and the questions that carrier is known to ask.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 4l7 16 2-7 7-2z"/><path d="M13 13l7 7"/></svg></div>
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
           <div class="tag">Language Support</div>
-          <h3>Simulator Interpretation</h3>
+          <h3>Simulator Interpreter</h3>
           <p>Full-day interpreter coverage embedded directly in simulator training — for pilots who aren't yet fluent in English.</p>
           <a class="card-link" href="#interpretation">Learn more →</a>
         </div>
@@ -617,7 +653,7 @@
     <div class="wrap">
       <div class="interpret-layout">
         <div class="interpret-copy reveal">
-          <div class="sec-eyebrow">Simulator Interpretation</div>
+          <div class="sec-eyebrow">Simulator Interpreter</div>
           <h2>When language shouldn't be the reason a pilot fails</h2>
           <p>Alcance Aviation is ready with a full team of interpreters embedded directly in simulator training — full-day coverage, from pre-brief to debrief, for pilots who aren't yet comfortable in English.</p>
           <p>Some of the world's best aviators can fly the aircraft perfectly and still struggle in the sim — not because of skill, but because of language. We're ready to deploy interpreters alongside instructors and check airmen throughout the entire training day: briefings, simulator sessions, CRM scenarios, and checkrides — using real aviation terminology, not generic translation.</p>
@@ -626,6 +662,7 @@
         <div class="credentials reveal">
           <div class="cred-head">What We Provide</div>
           <ul class="interpret-list">
+            <li><span class="ci-check">✓</span>Lead interpreter has a background as an ANAC-certified English proficiency examiner</li>
             <li><span class="ci-check">✓</span>Full team of interpreters ready to deploy, on-site</li>
             <li><span class="ci-check">✓</span>Full-day coverage — briefing through debrief</li>
             <li><span class="ci-check">✓</span>Scalable for multi-day, multi-crew, or high-volume blocks</li>
@@ -633,6 +670,69 @@
             <li><span class="ci-check">✓</span>Coverage for initial type rating, recurrent, and checkrides</li>
             <li><span class="ci-check">✓</span>Direct coordination with training centers and check airmen</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="interpret-detail reveal">
+        <div class="interpret-detail-head">
+          <div class="sec-eyebrow">Why Simulator Interpretation</div>
+        </div>
+        <div class="interpret-detail-grid cols-3">
+          <div class="interpret-detail-item">
+            <h4>The Concept</h4>
+            <p>A specialized interpretation service designed to support flight crews during simulator-based training conducted in English. The service provides real-time interpretation between flight crews and instructors, helping ensure that technical explanations, procedures, corrections, and training-related communication are clearly understood.</p>
+          </div>
+          <div class="interpret-detail-item">
+            <h4>Why This Service?</h4>
+            <p>Pilots frequently attend simulator training outside their country, and English is the primary language of instruction and communication in training centers. Although many professional pilots have a strong command of Aviation English, highly technical simulator training can involve complex explanations, rapid exchanges, unfamiliar terminology, and detailed instructor feedback. Specialized aviation interpretation helps remove unnecessary language barriers while preserving the efficiency and objectives of the training session.</p>
+          </div>
+          <div class="interpret-detail-item">
+            <h4>What the Interpreter Provides</h4>
+            <span class="sub-label">During simulator training</span>
+            <ul>
+              <li>Real-time interpretation</li>
+              <li>Support with instructor–pilot communication</li>
+              <li>Support during complex or high-density communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="interpret-detail reveal">
+        <div class="interpret-detail-head">
+          <div class="sec-eyebrow">Service Proposal</div>
+          <p>We provide specialized interpretation support for flight crews undergoing simulator-based training in English-speaking aviation training centers. The service is designed to facilitate clear and accurate communication between flight crews and instructors throughout the training process, while preserving the technical integrity and objectives of the training session.</p>
+        </div>
+        <div class="interpret-detail-grid">
+          <div class="interpret-detail-item">
+            <h4>Scope of Services</h4>
+            <ul>
+              <li>Simulator training sessions</li>
+              <li>Pre-simulator briefings</li>
+              <li>Post-simulator debriefings</li>
+              <li>Instructor–pilot communication</li>
+              <li>Training-related administrative or operational communication</li>
+            </ul>
+          </div>
+          <div class="interpret-detail-item">
+            <h4>Professional Differential</h4>
+            <ul>
+              <li>Extensive experience teaching and assessing Aviation English</li>
+              <li>Experience working with professional pilots</li>
+              <li>ICAO English proficiency assessment experience</li>
+              <li>Knowledge of aviation terminology and operational communication</li>
+              <li>Extensive experience communicating with flight crews in English</li>
+              <li>Specialized understanding of the linguistic demands of pilot training and assessment</li>
+            </ul>
+          </div>
+          <div class="interpret-detail-item">
+            <h4>Role Within the Training Environment</h4>
+            <p>The interpreter acts as a linguistic facilitator, supporting communication between the instructor and the flight crew — without replacing the instructor, influencing training decisions, or interfering with the assessment process. The objective is to ensure that language never becomes an unnecessary barrier to the effective delivery and understanding of technical training.</p>
+          </div>
+          <div class="interpret-detail-item">
+            <h4>Potential Application</h4>
+            <p>Particularly valuable for airlines and operators sending flight crews to international training centers, where consistent, aviation-specific interpretation keeps training on schedule and on standard.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -774,6 +874,13 @@
           <input type="email" id="cf-email" required>
         </div>
         <div class="field">
+          <label for="cf-type">I am a</label>
+          <select id="cf-type">
+            <option>Individual Pilot</option>
+            <option>Training Center / Airline / Company</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="cf-interest">I'm interested in</label>
           <select id="cf-interest">
             <option>Interview Coaching</option>
@@ -822,10 +929,11 @@
     e.preventDefault();
     const name = document.getElementById('cf-name').value;
     const email = document.getElementById('cf-email').value;
+    const type = document.getElementById('cf-type').value;
     const interest = document.getElementById('cf-interest').value;
     const message = document.getElementById('cf-message').value;
     const subject = encodeURIComponent(`Website inquiry — ${interest}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInterested in: ${interest}\n\nMessage:\n${message}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nType: ${type}\nInterested in: ${interest}\n\nMessage:\n${message}`);
     window.location.href = `mailto:contact@alcanceaviation.com?subject=${subject}&body=${body}`;
   }
 </script>
