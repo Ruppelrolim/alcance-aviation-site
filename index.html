@@ -950,6 +950,7 @@
         <a href="#shop">Shop</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="#" onclick="openInstructorsModal();return false;">Instructors</a>
       </div>
     </div>
   </footer>
@@ -1014,6 +1015,30 @@
     </div>
   </div>
 
+  <!-- ---------- INSTRUCTORS MODAL ---------- -->
+  <div class="modal-overlay" id="instructorsModal" onclick="if(event.target===this) closeInstructorsModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeInstructorsModal()" aria-label="Close">✕</button>
+      <div class="modal-eyebrow">Instructors Only</div>
+      <h3>Instructor Login</h3>
+      <p>Enter your password to access the shared course materials.</p>
+      <form id="instructorsForm" onsubmit="submitInstructorsForm(event)">
+        <div class="field">
+          <label for="instr-password">Password</label>
+          <input type="password" id="instr-password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary modal-submit">Login</button>
+        <div class="modal-note" id="instructorsError" style="display:none;color:#c0392b;">Incorrect password. Please try again.</div>
+      </form>
+      <div class="modal-success" id="instructorsSuccess" style="display:none;text-align:center;padding:24px 0;">
+        <div style="font-size:34px;margin-bottom:12px;">✓</div>
+        <h3 style="margin-bottom:10px;">Welcome, <span id="instructorsWelcomeName"></span></h3>
+        <p>Click below to open the shared course materials folder.</p>
+        <a class="btn btn-primary modal-submit" id="instructorsDropboxLink" href="#" target="_blank" rel="noopener" style="margin-top:18px;display:inline-block;text-decoration:none;">Open Course Materials →</a>
+      </div>
+    </div>
+  </div>
+
 <script>
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
@@ -1038,8 +1063,42 @@
     document.getElementById('contactModal').classList.remove('open');
     document.body.style.overflow='';
   }
+
+  const INSTRUCTORS = [
+    { name: 'Daniela Barion', password: 'Alcance@2026' }
+  ];
+  const DROPBOX_MATERIALS_LINK = 'https://www.dropbox.com/scl/fo/sz8l6gu0ebducauxk3vfe/AA0fSgrz2sc6Rctktn4hiIs?rlkey=ga215m0gveqizr2gl43oeg99j&st=ihxb4l6e&dl=0';
+
+  function openInstructorsModal(){
+    document.getElementById('instructorsForm').style.display = '';
+    document.getElementById('instructorsSuccess').style.display = 'none';
+    document.getElementById('instructorsError').style.display = 'none';
+    document.getElementById('instructorsForm').reset();
+    document.getElementById('instructorsModal').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeInstructorsModal(){
+    document.getElementById('instructorsModal').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function submitInstructorsForm(e){
+    e.preventDefault();
+    const pw = document.getElementById('instr-password').value;
+    const match = INSTRUCTORS.find(i => i.password === pw);
+    const errorEl = document.getElementById('instructorsError');
+    if(match){
+      errorEl.style.display = 'none';
+      document.getElementById('instructorsForm').style.display = 'none';
+      document.getElementById('instructorsWelcomeName').textContent = match.name;
+      document.getElementById('instructorsDropboxLink').href = DROPBOX_MATERIALS_LINK;
+      document.getElementById('instructorsSuccess').style.display = '';
+    } else {
+      errorEl.style.display = '';
+    }
+  }
+
   document.addEventListener('keydown', (e)=>{
-    if(e.key==='Escape') closeContactModal();
+    if(e.key==='Escape'){ closeContactModal(); closeInstructorsModal(); }
   });
   function submitContactForm(e){
     e.preventDefault();
