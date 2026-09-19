@@ -610,6 +610,29 @@
     section{padding:74px 0;}
     .contact-panel{padding:40px 24px;}
   }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{background:var(--bg);}
+  .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+  .testi-card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;
+    padding:32px;display:flex;flex-direction:column;gap:18px;
+  }
+  .testi-stars{color:var(--gold);font-size:15px;letter-spacing:2px;}
+  .testi-quote{color:var(--text);font-size:15.5px;line-height:1.7;flex:1;}
+  .testi-quote::before{content:'\201C';}
+  .testi-quote::after{content:'\201D';}
+  .testi-foot{display:flex;align-items:center;gap:14px;margin-top:auto;}
+  .testi-avatar{
+    width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    font-family:var(--display);font-weight:700;font-size:13px;
+  }
+  .testi-name{font-family:var(--display);font-weight:700;font-size:14px;color:var(--navy);}
+  .testi-role{font-size:12.5px;color:var(--text-dim);margin-top:2px;}
+  @media (max-width:760px){
+    .testi-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -627,6 +650,7 @@
         <a href="#services">SERVICES</a>
         <a href="#interpretation">INTERPRETATION</a>
         <a href="#flightplan">PROCESS</a>
+        <a href="#testimonials">REVIEWS</a>
         <a href="#book">THE BOOK</a>
         <a href="#shop">SHOP</a>
         <a href="#about">ABOUT</a>
@@ -844,6 +868,59 @@
           <div class="fp-phase">Landing</div>
           <h4>Offer & Debrief</h4>
           <p>Post-interview breakdown, whichever way it went.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-eyebrow">Real Results</div>
+        <h2>Trusted by pilots who got the offer</h2>
+        <p>A few words from pilots and readers who used the Alcance Aviation method.</p>
+      </div>
+      <div class="testi-grid reveal">
+        <div class="testi-card">
+          <div class="testi-quote">I had a great experience working with Alcance Aviation. They were very professional, helpful, and responsive throughout the entire process. They took the time to answer my questions, kept me updated, and made sure everything was handled correctly. I would definitely recommend Alcance Aviation to other pilots looking for professional and reliable assistance.</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">S.A.</div>
+            <div>
+              <div class="testi-name">S.A.</div>
+              <div class="testi-role">Airline Pilot, USA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">You guys changed my life. A month ago I was a different person &mdash; I was about to bail on an interview because I just didn't have the drive for it anymore. You and Dani got me there. No amount of money could repay that.</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">F.J.</div>
+            <div>
+              <div class="testi-name">F.J.</div>
+              <div class="testi-role">First Officer, Emirates</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testi-quote">Excellent book, with very valuable and practical content for anyone preparing for an interview. It presents relevant information, important guidance, and insights that help the reader prepare better. Congratulations!</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">P.</div>
+            <div>
+              <div class="testi-name">P.</div>
+              <div class="testi-role">Verified Amazon Purchase</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">Thank you so much for one more victory! God bless you!</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">L.L.</div>
+            <div>
+              <div class="testi-name">L.L.</div>
+              <div class="testi-role">Airline Pilot</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
