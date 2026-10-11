@@ -419,6 +419,11 @@
   .review-card p{font-style:italic;color:var(--text);font-size:14.5px;}
   .review-attr{margin-top:12px;font-family:var(--display);font-weight:700;font-size:11px;color:var(--text-dim);letter-spacing:0.05em;text-transform:uppercase;}
   .book-copy .hero-ctas{justify-content:flex-start;margin-top:34px;}
+  .edition-pill{
+    display:inline-block;font-family:var(--display);font-weight:700;font-size:11px;
+    letter-spacing:0.12em;color:var(--gold);border:1px solid var(--gold);
+    border-radius:20px;padding:5px 14px;margin-bottom:16px;text-transform:uppercase;
+  }
   @media (max-width:820px){
     .book-layout{grid-template-columns:1fr;}
     .book-copy .hero-ctas{justify-content:center;}
@@ -666,6 +671,7 @@
         <span class="sub">Every interview follows a pattern. We teach you to fly it.</span>
       </h1>
       <div class="hero-tags">
+        <a class="hero-tag" href="#svc-aerobatic-flights">Aerobatic Flights</a>
         <a class="hero-tag" href="#svc-interview-prep">Pilot Interview Preparation</a>
         <a class="hero-tag" href="#interpretation">Simulator Interpreter</a>
         <a class="hero-tag" href="#svc-pilot-for-a-day">Be a Pilot for One Day</a>
@@ -694,6 +700,13 @@
         <p>Every service exists to get you into the room already knowing how it goes.</p>
       </div>
       <div class="service-grid">
+        <div class="service-card reveal" id="svc-aerobatic-flights">
+          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v5l4-2"/></svg></div>
+          <div class="tag">Experience</div>
+          <h3>Aerobatic Flights</h3>
+          <p>Experience an aerobatic flight in the USA with a certified instructor — loops, rolls, and the thrill of unusual attitudes in a purpose-built aircraft. Get in touch for availability and pricing.</p>
+          <a class="card-link" href="#" onclick="openContactModal('Aerobatic Flights');return false;">Contact us →</a>
+        </div>
         <div class="service-card reveal" id="svc-interview-prep">
           <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M8 12l3 3 6-7"/><circle cx="12" cy="12" r="9"/></svg></div>
           <div class="tag">Coaching</div>
@@ -913,12 +926,42 @@
           </div>
         </div>
         <div class="testi-card">
-          <div class="testi-quote">Thank you so much for one more victory! God bless you!</div>
+          <div class="testi-quote">I want to express my sincere gratitude to Alcance Aviation for all the support and dedication during my interview preparation. It took many hours of training, guidance, and corrections &mdash; always with great patience, professionalism, and attention to detail. And the results speak for themselves: three interviews, three offers, including GoJet and JSX. This preparation made a huge difference in my confidence and in how I presented myself in each selection process. More than excellent professional preparation, I found friendship, encouragement, and a genuine willingness to help. My gratitude to Alcance Aviation for being part of these achievements and for all the knowledge shared throughout this journey.</div>
           <div class="testi-foot">
             <div class="testi-avatar">L.L.</div>
             <div>
               <div class="testi-name">L.L.</div>
-              <div class="testi-role">Airline Pilot</div>
+              <div class="testi-role">From the Air Force to GoJet</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">Passing the ATI interview was the biggest goal of my career, and I know the outcome would have been different without the support of Alcance Aviation. The preparation process was flawless. Alcance Aviation was precise &mdash; pinpointing exactly where I needed to improve, giving me absolute clarity on what the board expected, and the confidence I needed for interview day. If you want to get hired and don't want to rely on luck, Alcance is the right path. Thank you, Alcance Aviation team, for the partnership and professionalism!</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">F.</div>
+            <div>
+              <div class="testi-name">F.</div>
+              <div class="testi-role">From CAE to ATI</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">I had the opportunity to receive Alcance Aviation's support during a very important stage of my professional career in the United States. The interview preparation was extremely valuable &mdash; from helping me structure my answers and present my professional experience effectively, to improving the way I communicated with greater confidence and clarity throughout the process. Alcance Aviation combines experience, professionalism, and an excellent ability to understand each professional's profile and individual needs. The guidance was practical, personalized, and directly applicable to the interviews I took. Without a doubt, this preparation significantly contributed to making me feel more confident and better prepared to navigate the U.S. job market. I'm very grateful for all the support and highly recommend this work to professionals preparing for new career challenges.</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">A.</div>
+            <div>
+              <div class="testi-name">A.</div>
+              <div class="testi-role">Airline Pilot, USA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">I completed the online interview preparation course with Alcance Aviation for the UPS First Officer interview, and I really enjoyed the experience. I have 19 years of experience as an Airbus A320 Captain with LATAM, and since April 2024 I have been flying as a First Officer on the Boeing 757/767, based in Miami. The training was very useful and helped me better understand what to expect during the interview, how to organize my experience, and how to present myself clearly and confidently. The instructor was very knowledgeable and gave practical feedback throughout the process. I feel much more prepared and confident after completing the training. I would definitely recommend Alcance Aviation to any pilot preparing for an airline interview, especially at UPS. Thank you to the Alcance Aviation team for all the support!</div>
+          <div class="testi-foot">
+            <div class="testi-avatar">R.F.Z.</div>
+            <div>
+              <div class="testi-name">R.F.Z.</div>
+              <div class="testi-role">From LATAM to UPS</div>
             </div>
           </div>
         </div>
@@ -935,8 +978,9 @@
         </div>
         <div class="book-copy reveal">
           <div class="sec-eyebrow" style="text-align:left;">The Book</div>
+          <div class="edition-pill">Second Edition</div>
           <h2>Cleared for the Interview</h2>
-          <p>The complete preparation guide for airline, cargo, fractional, and corporate pilot interviews — over 400 real questions across 10 focused chapters, from HR and CRM to technical knowledge, weather, and scenario-based problem solving.</p>
+          <p>The complete preparation guide for airline, cargo, fractional, and corporate pilot interviews — over 400 real questions across 16 focused chapters, from HR and CRM to technical knowledge, weather, chart reading, and cold-temperature altitude corrections.</p>
           <div class="review-card">
             <div class="review-stars">★★★★★</div>
             <p>"Excellent book, with content that's extremely valuable and practical for anyone preparing for an interview. It covers relevant information, important guidance, and insights that help the reader prepare better. Congratulations!"</p>
